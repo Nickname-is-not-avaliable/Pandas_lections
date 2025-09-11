@@ -113,7 +113,7 @@ dtype: float64
 
 ---
 
-*Не можешь справиться с шагом 4? В лекциях его нет. Вот тебе [ссылка на документацию](https://pandas.pydata.org/pandas-docs/version/1.3/reference/api/pandas.concat.html).* 
+*В лекциях нет шага 4 из практики 3.4. Вот тебе [ссылка на документацию](https://pandas.pydata.org/pandas-docs/version/1.3/reference/api/pandas.concat.html).* 
 
 
 *И помни, что в реальном программировании **всегда** нужно рыться в документации*
