@@ -21,7 +21,7 @@ print(df)
 ```
 **Вывод:**
 ```
-ㅤ  state  year  pop
+ㅤ    state  year  pop
 0    Ohio  2000  1.5
 1    Ohio  2001  1.7
 2    Ohio  2002  3.6
