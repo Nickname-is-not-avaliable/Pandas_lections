@@ -1,12 +1,12 @@
-### 3.5 Первое знакомство с `DataFrame`
+### 3.5 Первое знакомство с [`DataFrame`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html)
 
-`DataFrame` — это двумерная табличная структура данных и основной объект в Pandas. Её можно представить как таблицу Excel, SQL-таблицу или словарь, состоящий из объектов `Series`.
+[`DataFrame`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) — это двумерная табличная структура данных и основной объект в Pandas. Её можно представить как таблицу Excel, SQL-таблицу или словарь, состоящий из объектов `Series`.
 
 ---
 
-#### 3.5.1-3.5.2 Создание `DataFrame`
+#### 3.5.1-3.5.2 Создание [`DataFrame`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html)
 
-Самый распространённый способ — из словаря, где ключи становятся названиями столбцов, а значения — списками или `Series`.
+Самый распространённый способ — из словаря, где ключи становятся названиями столбцов, а значения — списками или [`Series`](https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html#series).
 
 ```python
 # Создадим словарь, где значения - это списки
@@ -31,7 +31,7 @@ print(df)
 ```
 ---
 
-#### 3.5.3-3.5.4 Неуникальные индексы в `Series`
+#### 3.5.3-3.5.4 Неуникальные индексы в [`Series`](https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html#series)
 
 В отличие от ключей словаря, индексы в `Series` (и `DataFrame`) **могут повторяться**. При обращении по такому индексу вы получите `Series` со всеми значениями, которые ему соответствуют.
 
@@ -64,12 +64,12 @@ dtype: int64
 
 ---
 
-#### 3.5.5-3.5.6 Гибкое создание `DataFrame` с параметрами `columns` и `index`
+#### 3.5.5-3.5.6 Гибкое создание `DataFrame` с параметрами [`columns`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.columns.html) и [`index`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.index.html)
 
 При создании `DataFrame` можно управлять столбцами и индексами:
 
-1.  **`columns`**: Позволяет выбирать, переупорядочивать и даже добавлять несуществующие столбцы.
-2.  **`index`**: Позволяет задать кастомные метки для строк.
+1.  **[`columns`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.columns.html)**: Позволяет выбирать, переупорядочивать и даже добавлять несуществующие столбцы.
+2.  **[`index`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.index.html)**: Позволяет задать кастомные метки для строк.
 
 **Правило:** Количество строк (длина списков в словаре) и количество меток в `index` **должно совпадать**.
 
@@ -91,22 +91,22 @@ print("Переупорядоченный:\n", df_reordered)
 print("\nС новым столбцом:\n", df_new_col)
 print("\nС кастомным индексом:\n", df_custom_index)
 ```
-Для быстрой проверки первых строк `DataFrame` используйте `df.head(n)`, где `n` — количество строк.
+Для быстрой проверки первых строк `DataFrame` используйте [`df.head(n)`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.head.html), где `n` — количество строк.
 
 ---
 
-#### 3.5.7-3.5.8 Доступ к данным
+#### 3.5.7-3.5.8 [Доступ к данным](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#basics)
 
 *   **Доступ к столбцу:** Возвращает `Series`.
     1.  **Синтаксис словаря (рекомендуемый):** `df['column_name']`
     2.  **Синтаксис атрибута:** `df.column_name`. **Ограничение:** не работает, если в имени столбца есть пробелы, спецсимволы или оно совпадает с названием метода `DataFrame` (например, `df.index`).
 
 *   **Доступ к строке по метке индекса:** Возвращает `Series`.
-    Используется атрибут `.loc`: `df.loc[index_label]`
+    Используется атрибут [`.loc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html): `df.loc[index_label]`
 
 ---
 
-#### 3.5.9-3.5.10 Присваивание и создание новых столбцов
+#### 3.5.9-3.5.10 [Присваивание и создание новых столбцов](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#setting-with-enlargement)
 
 Новый столбец создается простым присваиванием.
 
