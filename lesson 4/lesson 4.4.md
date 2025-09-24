@@ -1,4 +1,4 @@
-### 4.4 Кто такой [JSON](https://ecma-international.org/publications-and-standards/standards/ecma-404/) и как с ним подружиться?
+### 4.4 Кто такой [JSON](https://developer.mozilla.org/ru/docs/Glossary/JSON) и как с ним подружиться?
 
 ---
 #### 4.4.1-4.4.3 Что такое JSON?
