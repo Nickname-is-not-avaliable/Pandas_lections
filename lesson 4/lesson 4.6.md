@@ -3,7 +3,7 @@
 ---
 #### 4.6.1-4.6.2 Чтение из Excel
 
-**1. `pd.read_excel()` — основная функция**
+**1. [`pd.read_excel()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html) — основная функция**
 
 Эта функция является основным инструментом для чтения данных из `.xlsx` или `.xls` файлов.
 
@@ -68,7 +68,7 @@ print(df_correct_header)
 ---
 #### 4.6.3-4.6.4 Запись в Excel
 
-**1. `df.to_excel()` — сохранение одного DataFrame**
+**1. [`df.to_excel()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_excel.html) — сохранение одного DataFrame**
 
 Сохраняет DataFrame в Excel-файл.
 
@@ -76,7 +76,7 @@ print(df_correct_header)
 *   `index=False`: Очень частый параметр. Указывает **не записывать** индекс DataFrame в первую колонку файла.
 *   `sheet_name='MySheet'`: Задает имя для листа, на который будут записаны данные.
 
-**2. `pd.ExcelWriter` — сохранение нескольких DataFrame в один файл**
+**2. [`pd.ExcelWriter`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.ExcelWriter.html) — сохранение нескольких DataFrame в один файл**
 
 `ExcelWriter` — это объект, который управляет процессом записи в один Excel-файл, позволяя добавлять данные на разные листы. **Файл не будет создан/изменен, пока вы не вызовете `.close()` или `.save()`**.
 
@@ -96,13 +96,13 @@ with pd.ExcelWriter('output_multisheet.xlsx') as writer:
 print("\nФайл 'output_multisheet.xlsx' успешно создан.")
 ```
 ---
-#### 4.6.8-4.6.9 Работа с базами данных через `SQLAlchemy`
+#### 4.6.8-4.6.9 Работа с базами данных через [`SQLAlchemy`](https://www.sqlalchemy.org/)
 
-`SQLAlchemy` — это библиотека, которая предоставляет универсальный способ взаимодействия с различными СУБД (SQLite, PostgreSQL, MySQL и др.) из Python. Pandas использует ее "под капотом" для своих SQL-функций.
+[`SQLAlchemy`](https://www.sqlalchemy.org/) — это библиотека, которая предоставляет универсальный способ взаимодействия с различными СУБД (SQLite, PostgreSQL, MySQL и др.) из Python. Pandas использует ее "под капотом" для своих SQL-функций.
 
 **Функции и аргументы:**
-*   `sql.create_engine('connection_string')`: Создает "движок" — объект, который управляет подключением к базе данных. Строка подключения зависит от типа БД. Для SQLite это просто `sqlite:///filename.db`.
-*   `df.to_sql(name, con, ...)`: Записывает DataFrame в SQL-таблицу.
+*   [`sql.create_engine('connection_string')`](https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.create_engine): Создает "движок" — объект, который управляет подключением к базе данных. Строка подключения зависит от типа БД. Для SQLite это просто `sqlite:///filename.db`.
+*   [`df.to_sql(name, con, ...)`]: Записывает DataFrame в SQL-таблицу.
     *   `name`: Имя SQL-таблицы.
     *   `con`: Объект подключения (движок).
     *   `if_exists`: Что делать, если таблица уже существует.
