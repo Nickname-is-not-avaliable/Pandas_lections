@@ -2,7 +2,7 @@
 
 ---
 
-### 2.9.1-2.9.2 Представления (Views) vs Копии: `reshape`
+### 2.9.1-2.9.2 Представления (Views) vs Копии: [`reshape`](https://numpy.org/doc/stable/reference/generated/numpy.reshape.html)
 
 Функция `.reshape()` **не создает новый массив**, а лишь меняет "представление" (view) исходных данных. Это означает, что новый и старый массив используют одну и ту же область памяти.
 
@@ -11,7 +11,7 @@
 
 ---
 
-### 2.9.3 Транспонирование матрицы
+### 2.9.3 Транспонирование матрицы ([`.T`](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.T.html), [`.transpose()`](https://numpy.org/doc/stable/reference/generated/numpy.transpose.html))
 
 Транспонирование меняет строки и столбцы местами. Как и `reshape`, эта операция создает **представление**, а не копию.
 
@@ -20,23 +20,23 @@
 
 ---
 
-### 2.9.4-2.9.5 Унарные математические функции (ufunc)
+### 2.9.4-2.9.5 [Унарные математические функции (ufunc)](https://numpy.org/doc/stable/reference/ufuncs.html#available-ufuncs)
 
 Эти функции выполняют поэлементные операции над одним массивом.
 
-*   **Корень квадратный:** `np.sqrt(arr)`
-*   **Модуль (абсолютное значение):** `np.abs(arr)`
-*   **Округление до ближайшего целого:** `np.round(arr)`
+*   **Корень квадратный:** [`np.sqrt(arr)`](https://numpy.org/doc/stable/reference/generated/numpy.sqrt.html)
+*   **Модуль (абсолютное значение):** [`np.abs(arr)`](https://numpy.org/doc/stable/reference/generated/numpy.absolute.html)
+*   **Округление до ближайшего целого:** [`np.round(arr)`](https://numpy.org/doc/stable/reference/generated/numpy.round.html)
     *(Примечание: `0.5` округляется до ближайшего четного числа, например, `2.5 -> 2`, `3.5 -> 4`)*
-*   **Округление вверх (потолок):** `np.ceil(arr)`
-*   **Округление вниз (пол):** `np.floor(arr)`
+*   **Округление вверх (потолок):** [`np.ceil(arr)`](https://numpy.org/doc/stable/reference/generated/numpy.ceil.html)
+*   **Округление вниз (пол):** [`np.floor(arr)`](https://numpy.org/doc/stable/reference/generated/numpy.floor.html)
 
 ---
 
 ### 2.9.6 Работа с `NaN` и `inf` *(Пункт с inf можно найти в конце 10 лекции. Сгруппировал так из-за близости тем.)*
 
-*   **Проверка на `NaN`:** `np.isnan(arr)`
-*   **Проверка на бесконечность:** `np.isinf(arr)`
+*   **Проверка на `NaN`:** [`np.isnan(arr)`](https://numpy.org/doc/stable/reference/generated/numpy.isnan.html)
+*   **Проверка на бесконечность:** [`np.isinf(arr)`](https://numpy.org/doc/stable/reference/generated/numpy.isinf.html)
 
 Обе функции возвращают булеву маску. NumPy обычно не выдает ошибок при вычислениях с `NaN`, а "распространяет" его дальше (например, `5 + np.nan` будет `nan`).
 
@@ -57,17 +57,16 @@ np.abs(arr1, out=arr2)
 
 ---
 
-### 2.9.8-2.9.10 Бинарные математические функции
+### 2.9.8-2.9.10 [Бинарные математические функции](https://numpy.org/doc/stable/reference/ufuncs.html#available-ufuncs)
 
 Эти функции выполняют поэлементные операции над двумя массивами. **Важно:** массивы должны быть одинаковой длины (или совместимы по правилам [broadcasting](https://numpy.org/doc/stable/user/basics.broadcasting.html)).
 
-*   **Поэлементный максимум:** `np.maximum(arr1, arr2)`
-*   **Поэлементный минимум:** `np.minimum(arr1, arr2)`
+*   **Поэлементный максимум:** [`np.maximum(arr1, arr2)`](https://numpy.org/doc/stable/reference/generated/numpy.maximum.html)
+*   **Поэлементный минимум:** [`np.minimum(arr1, arr2)`](https://numpy.org/doc/stable/reference/generated/numpy.minimum.html)
 
 **Арифметические операции:**
-Хотя для всех арифметических операций существуют функции, на практике почти всегда используются стандартные операторы, так как это короче и читабельнее.
 
-*   **Сложение:** `np.add(arr1, arr2)` эквивалентно `arr1 + arr2`
-*   **Вычитание:** `np.subtract(arr1, arr2)` эквивалентно `arr1 - arr2`
-*   **Умножение:** `np.multiply(arr1, arr2)` эквивалентно `arr1 * arr2`
-*   **Деление:** `np.divide(arr1, arr2)` эквивалентно `arr1 / arr2`
+*   **Сложение:** [`np.add(arr1, arr2)`](https://numpy.org/doc/stable/reference/generated/numpy.add.html) эквивалентно `arr1 + arr2`
+*   **Вычитание:** [`np.subtract(arr1, arr2)`](https://numpy.org/doc/stable/reference/generated/numpy.subtract.html) эквивалентно `arr1 - arr2`
+*   **Умножение:** [`np.multiply(arr1, arr2)`](https://numpy.org/doc/stable/reference/generated/numpy.multiply.html) эквивалентно `arr1 * arr2`
+*   **Деление:** [`np.divide(arr1, arr2)`](https://numpy.org/doc/stable/reference/generated/numpy.divide.html) эквивалентно `arr1 / arr2`
