@@ -3,7 +3,7 @@
 ---
 #### 5.4.1-5.4.4 Обнаружение и фильтрация выбросов
 
-**1. Анализ с помощью `.describe()`**
+**1. Анализ с помощью [`.describe()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html)**
 Первый шаг в поиске выбросов — посмотреть на описательные статистики. Большой разрыв между `75%` (75-й перцентиль) и `max`, или между `min` и `25%`, часто указывает на наличие выбросов.
 
 **--- Исходные данные ---**
@@ -80,9 +80,9 @@ print("DataFrame после замены выбросов на NaN:")
 print(df_with_nan.head())
 ```
 
-**2. Использование `np.sign` и `.clip()`**
-*   `np.sign(df)`: Возвращает `DataFrame` той же формы, где `1` — для положительных чисел, `-1` — для отрицательных, `0` — для нуля. Полезно для "срезания" значений до определенного порога, сохраняя их знак.
-*   `.clip(lower, upper)`: Ограничивает значения в `DataFrame`. Всё, что меньше `lower`, становится `lower`. Всё, что больше `upper`, становится `upper`.
+**2. Использование [`np.sign`](https://numpy.org/doc/stable/reference/generated/numpy.sign.html) и [`.clip()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.clip.html)**
+*   [`np.sign(df)`](https://numpy.org/doc/stable/reference/generated/numpy.sign.html): Возвращает `DataFrame` той же формы, где `1` — для положительных чисел, `-1` — для отрицательных, `0` — для нуля. Полезно для "срезания" значений до определенного порога, сохраняя их знак.
+*   [`.clip(lower, upper)`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.clip.html): Ограничивает значения в `DataFrame`. Всё, что меньше `lower`, становится `lower`. Всё, что больше `upper`, становится `upper`.
 
 **--- Исходные данные ---**
 ```python
@@ -115,7 +115,7 @@ print(df_clipped.describe()) # .describe() показывает, что min/max 
 ---
 #### 5.4.9 Перемешивание и случайная выборка
 
-**1. Перемешивание с `np.random.permutation` и `.take()`**
+**1. Перемешивание с [`np.random.permutation`](https://numpy.org/doc/stable/reference/random/generated/numpy.random.permutation.html) и [`.take()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.take.html)**
 Этот способ позволяет полностью перемешать строки `DataFrame`.
 
 ```python
@@ -128,7 +128,7 @@ print("Перемешанный DataFrame:")
 print(df_shuffled.head())
 ```
 
-**2. Случайная выборка с `.sample()`**
+**2. Случайная выборка с [`.sample()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sample.html)**
 `.sample()` — это более удобный и гибкий способ получить случайное подмножество данных.
 
 ```python
