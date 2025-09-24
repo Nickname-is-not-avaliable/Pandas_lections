@@ -2,9 +2,9 @@
 
 ---
 
-В `Series` (и Pandas в целом) все операции автоматически **выравниваются по индексу**.
+В [`Series`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html) (и Pandas в целом) все операции автоматически **выравниваются по индексу**.
 
-#### 3.3.1-3.3.2 Сохранение индексов и операции
+#### 3.3.1-3.3.2 Сохранение индексов и [операции](https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html#series)
 
 *   **Индексы "привязаны" к значениям.** Если вы фильтруете `Series` или применяете к нему математические операции, индексы остаются с соответствующими им значениями и не пересчитываются с нуля.
 *   **Проверка наличия индекса:** Оператор `in` проверяет наличие метки в **индексе**, а не в значениях.
@@ -18,7 +18,7 @@
 
 ---
 
-#### 3.3.3-3.3.4 Создание `Series` из словаря
+#### 3.3.3-3.3.4 Создание `Series` из [словаря](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html)
 
 Ключи словаря автоматически становятся индексами.
 
@@ -52,16 +52,16 @@ dtype: float64
 
 ---
 
-#### 3.3.5 Работа с пропущенными данными: `isnull` и `notnull`
+#### 3.3.5 Работа с пропущенными данными: [`isnull`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.isnull.html) и [`notnull`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.notnull.html)
 
 `NaN` — это стандартный маркер пропущенных данных в Pandas.
 
-*   `pd.isnull(s)` (или `s.isnull()`): Возвращает булеву маску, где `True` стоит на месте `NaN`.
-*   `pd.notnull(s)` (или `s.notnull()`): Возвращает обратную маску (`True` для всех значений, кроме `NaN`).
+*   `pd.isnull(s)` (или [`s.isnull()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.isnull.html)): Возвращает булеву маску, где `True` стоит на месте `NaN`.
+*   `pd.notnull(s)` (или [`s.notnull()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.notnull.html)): Возвращает обратную маску (`True` для всех значений, кроме `NaN`).
 
 ---
 
-#### 3.3.6-3.3.8 Арифметические операции и выравнивание данных
+#### 3.3.6-3.3.8 [Арифметические операции и выравнивание данных](https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html#vectorized-operations-and-label-alignment-with-series)
 
 При выполнении операций (например, сложения) между двумя `Series`, Pandas выравнивает их по меткам индекса.
 
@@ -87,7 +87,7 @@ dtype: float64
 
 ---
 
-#### 3.3.9-3.3.10 Редактирование метаданных: `.index` и `.name`
+#### 3.3.9-3.3.10 Редактирование метаданных: [`.index`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.index.html) и [`.name`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.name.html)
 
 *   **Изменение индекса:** Вы можете полностью заменить индекс `Series`, присвоив ему новый список. Длина нового списка **должна** совпадать с длиной `Series`.
     ```python
@@ -113,7 +113,7 @@ dtype: float64
 
 ---
 
-*В лекциях нет шага 4 из практики 3.4. [Вот ссылка на документацию](https://pandas.pydata.org/pandas-docs/version/1.3/reference/api/pandas.concat.html).* 
+*В лекциях нет информации для задачки 3.4.4 [Вот ссылка на документацию `pd.concat`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html).* 
 
 
 *И помни, что в реальном программировании **всегда** нужно рыться в документации*
