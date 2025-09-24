@@ -1,6 +1,6 @@
-### 3.1 Первое знакомство с Series
+### 3.1 Первое знакомство с [Series](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html)
 
-**Pandas** — это ключевая библиотека для анализа данных в Python. Она предоставляет две основные структуры данных: `Series` (1D) и `DataFrame` (2D). Этот раздел посвящен `Series`.
+**[Pandas](https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html)** — это ключевая библиотека для анализа данных в Python. Она предоставляет две основные структуры данных: `Series` (1D) и [`DataFrame`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) (2D). Этот раздел посвящен [`Series`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html).
 
 ---
 
@@ -24,12 +24,12 @@ print(pd.__version__)
 
 ---
 
-#### 3.1.4-3.1.8 Что такое `Series` и как его создать?
+#### 3.1.4-3.1.8 Что такое [`Series`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html) и как его создать?
 
 `Series` — это одномерная структура данных, похожая на массив, но с одним ключевым отличием: у неё есть **индекс**. Можно думать о `Series` как об улучшенном словаре Python или как об одном именованном столбце в таблице.
 
-*   **Значения (values):** Основные данные, которые хранятся в виде массива NumPy.
-*   **Индекс (index):** Метки, связанные с каждым значением.
+*   **Значения ([values](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.values.html)):** Основные данные, которые хранятся в виде массива NumPy.
+*   **Индекс ([index](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.index.html)):** Метки, связанные с каждым значением.
 
 **Создание `Series`:**
 
@@ -72,7 +72,7 @@ print(pd.__version__)
 
 ---
 
-#### 3.1.9 Доступ к данным и индексация
+#### 3.1.9 Доступ к данным и [индексация](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#basics)
 
 Одно из главных преимуществ `Series` — гибкая система индексации.
 
@@ -91,15 +91,15 @@ print(pd.__version__)
 
 #### 3.1.10 Основные атрибуты
 
-*   **`.values`**: Возвращает значения `Series` в виде массива NumPy.
+*   **[`.values`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.values.html)**: Возвращает значения `Series` в виде массива NumPy.
     ```python
     print(s_custom.values) # Вывод: [10 20 30 40]
     ```
-*   **`.index`**: Возвращает объект индекса.
+*   **[`.index`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.index.html)**: Возвращает объект индекса.
     ```python
     print(s_custom.index) # Вывод: Index(['a', 'b', 'c', 'd'], dtype='object')
     ```
-*   **`.dtype`**: Показывает тип данных **значений**, а не индексов.
+*   **[`.dtype`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.dtype.html)**: Показывает тип данных **значений**, а не индексов.
     ```python
     print(s_custom.dtype) # Вывод: int64
     ```
