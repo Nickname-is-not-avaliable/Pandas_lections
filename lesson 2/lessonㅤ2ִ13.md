@@ -2,7 +2,7 @@
 
 ---
 
-### 2.13.1 Логические проверки для всего массива: `any` и `all`
+### 2.13.1 Логические проверки для всего массива: [`.any()`](https://numpy.org/doc/stable/reference/generated/numpy.any.html) и [`.all()`](https://numpy.org/doc/stable/reference/generated/numpy.all.html)
 
 Эти методы применяются к булевым массивам для их быстрой проверки.
 
@@ -11,7 +11,7 @@
 
 ---
 
-### 2.13.2-2.13.3 Сортировка массивов
+### 2.13.2-2.13.3 Сортировка массивов ([`.sort()`](https://numpy.org/doc/stable/reference/generated/numpy.sort.html))
 
 *   **Метод `.sort()`:**
     `arr.sort()` сортирует массив **на месте** (in-place), то есть изменяет исходный массив и ничего не возвращает (`None`).
@@ -41,33 +41,32 @@
 
 ---
 
-### 2.13.4-2.13.5 Операции над множествами
+### 2.13.4-2.13.5 [Операции над множествами](https://numpy.org/doc/stable/reference/routines.set.html)
 
-*   **`np.unique(arr)`**: Возвращает новый отсортированный массив, содержащий только **уникальные** элементы из `arr`.
+*   **[`np.unique(arr)`](https://numpy.org/doc/stable/reference/generated/numpy.unique.html)**: Возвращает новый отсортированный массив, содержащий только **уникальные** элементы из `arr`.
 
-*   **`np.isin(arr)`**: Проверяет, какие элементы из `arr1` содержатся в `arr2`. Возвращает **булеву маску** длиной с `arr1`.
+*   **[`np.isin(arr1, arr2)`](https://numpy.org/doc/stable/reference/generated/numpy.isin.html)**: Проверяет, какие элементы из `arr1` содержатся в `arr2`. Возвращает **булеву маску** длиной с `arr1`.
 
-  
-    ***Примечание*** `np.isin(arr)` это `np.in1d(arr1, arr2)`. В новых версиях `np.in1d(arr1, arr2)` уже не работает, но в лекциях указана именно `np.in1d(arr1, arr2)`
+    ***Примечание*** `np.isin()` это современный аналог [`np.in1d()`](https://numpy.org/doc/stable/reference/generated/numpy.in1d.html). В новых версиях рекомендуется использовать `np.isin()`, но в лекциях указана именно `np.in1d()`.
 
 ---
 
-### 2.13.6-2.13.8 Операции из линейной алгебры
+### 2.13.6-2.13.8 Операции из [линейной алгебры (`np.linalg`)](https://numpy.org/doc/stable/reference/routines.linalg.html)
 
 Большинство этих функций находятся в подмодуле `np.linalg`.
 
-*   **Матричное умножение:** `np.dot(arr1, arr2)` или `arr1 @ arr2`.
-*   **Определитель (детерминант):** `np.linalg.det(arr)`
-*   **Обратная матрица:** `np.linalg.inv(arr)`
+*   **Матричное умножение:** [`np.dot(arr1, arr2)`](https://numpy.org/doc/stable/reference/generated/numpy.dot.html) или `arr1 @ arr2`.
+*   **Определитель (детерминант):** [`np.linalg.det(arr)`](https://numpy.org/doc/stable/reference/generated/numpy.linalg.det.html)
+*   **Обратная матрица:** [`np.linalg.inv(arr)`](https://numpy.org/doc/stable/reference/generated/numpy.linalg.inv.html)
 
 *   **Работа с диагоналями:**
-    *   **Извлечение диагонали:** `np.diag(arr, k=0)`
+    *   **Извлечение диагонали:** [`np.diag(arr, k=0)`](https://numpy.org/doc/stable/reference/generated/numpy.diag.html)
         `k` — сдвиг относительно главной диагонали: `k=0` (главная), `k=1` (над главной), `k=-1` (под главной).
-    *   **Сумма элементов главной диагонали (след матрицы):** `np.trace(arr)`
+    *   **Сумма элементов главной диагонали (след матрицы):** [`np.trace(arr)`](https://numpy.org/doc/stable/reference/generated/numpy.trace.html)
 
 *   **Треугольные матрицы:**
-    *   **Верхнетреугольная:** `np.triu(arr)` (всё, что ниже главной диагонали, зануляется).
-    *   **Нижнетреугольная:** `np.tril(arr)` (всё, что выше главной диагонали, зануляется).
+    *   **Верхнетреугольная:** [`np.triu(arr)`](https://numpy.org/doc/stable/reference/generated/numpy.triu.html) (всё, что ниже главной диагонали, зануляется).
+    *   **Нижнетреугольная:** [`np.tril(arr)`](https://numpy.org/doc/stable/reference/generated/numpy.tril.html) (всё, что выше главной диагонали, зануляется).
 
 **Пример для `np.diag`:**
 Представьте, у нас есть матрица 4x4, где числа специально подобраны так, чтобы было легко отследить их положение:
@@ -139,11 +138,11 @@ print("Диагональ со сдвигом k=-2:", lower_diag_2)
 
 ---
 
-### 2.13.9-2.13.10 Генерация случайных данных: `np.random`
+### 2.13.9-2.13.10 Генерация случайных данных: [`np.random`](https://numpy.org/doc/stable/reference/random/index.html)
 
 Этот подмодуль содержит функции для создания массивов со случайными числами.
 
-*   **`np.random.randint(low, high, size)`:**
+*   **[`np.random.randint(low, high, size)`](https://numpy.org/doc/stable/reference/random/generated/numpy.random.randint.html):**
     Создает массив случайных **целых чисел**.
     *   `low`: Минимальное значение (включительно).
     *   `high`: Максимальное значение (**не** включительно).
