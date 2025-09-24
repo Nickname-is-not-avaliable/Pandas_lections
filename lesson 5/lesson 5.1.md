@@ -1,9 +1,9 @@
-### 5.1 Учимся обрабатывать пропуски
+### 5.1 Учимся [обрабатывать пропуски](https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html)
 
 ---
 #### 5.1.1-5.1.3 Обнаружение пропущенных значений
 
-Pandas использует `NaN` (Not a Number) для представления пропущенных данных. Функции `.isnull()` и `.notnull()` возвращают булеву маску, указывающую на наличие или отсутствие пропусков. Они распознают как `np.nan`, так и `None`.
+Pandas использует [`NaN`](https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#missing-data-basics) (Not a Number) для представления пропущенных данных. Функции [`.isnull()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.isnull.html) и [`.notnull()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.notnull.html) возвращают булеву маску, указывающую на наличие или отсутствие пропусков. Они распознают как [`np.nan`](https://numpy.org/doc/stable/reference/constants.html#numpy.nan), так и `None`.
 
 **--- Исходные данные ---**
 ```python
@@ -50,9 +50,9 @@ print(df.notnull())
 2  True  False  True
 ```
 ---
-#### 5.1.4-5.1.8 Удаление пропущенных значений (`.dropna()`)
+#### 5.1.4-5.1.8 Удаление пропущенных значений ([`.dropna()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html))
 
-`.dropna()` — это основной инструмент для фильтрации пропущенных данных.
+[`.dropna()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html) — это основной инструмент для фильтрации пропущенных данных.
 
 **--- Исходные данные для примеров ---**
 ```python
@@ -102,7 +102,7 @@ print(df_drop.dropna(how='all'))
 Результат df.dropna(how='all'):
      A     B    C     D
 0  1.0   2.0  3.0   4.0
-1  NaN   6.0  7.0   NaN
+1  NaN   6.0   7.0   NaN
 2  9.0  10.0  NaN  12.0
 ```
 ---
