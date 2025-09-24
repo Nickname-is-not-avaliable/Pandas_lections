@@ -1,11 +1,10 @@
-
-### 3.11 Арифметика с пропусками, сортировка и уникальность
+### 3.11 [Арифметика с пропусками](https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#filling-missing-values), [сортировка](https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html#sorting) и [уникальность](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.is_unique.html)
 
 ---
 
-#### 3.11.1-3.11.2 Арифметика с заполнением пропусков
+#### 3.11.1-3.11.2 [Арифметика с заполнением пропусков](https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#filling-missing-values)
 
-Арифметические методы (`.add`, `.sub` и т.д.) имеют параметр `fill_value`, который позволяет заменить пропуски (`NaN`) заданным значением **перед** выполнением операции.
+Арифметические методы ([`.add`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.add.html), [`.sub`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sub.html) и т.д.) имеют параметр `fill_value`, который позволяет заменить пропуски (`NaN`) заданным значением **перед** выполнением операции.
 
 **--- Исходные данные ---**
 ```python
@@ -50,7 +49,7 @@ D  2.0  NaN
 *(Примечание: `NaN` в столбце `b` остался, т.к. `fill_value` применяется только там, где есть хотя бы одно значение в паре `df1`, `df2`)*
 
 ---
-#### 3.11.3-3.11.5 Операции между `DataFrame` и `Series` (Broadcasting)
+#### 3.11.3-3.11.5 [Операции между `DataFrame` и `Series` (Broadcasting)](https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html#operations-between-dataframe-and-series)
 
 **--- Исходные данные ---**
 ```python
@@ -117,7 +116,7 @@ D -31.0 -30.0 -29.0
 ```
 
 ---
-#### 3.11.6-3.11.8 Сортировка
+#### 3.11.6-3.11.8 [Сортировка](https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html#sorting)
 
 **--- Исходные данные ---**
 ```python
@@ -166,7 +165,7 @@ a    2    3
 c    0    1
 ```
 ---
-#### 3.11.9-3.11.10 Проверка на уникальность
+#### 3.11.9-3.11.10 Проверка на уникальность [`is_unique`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.is_unique.html)
 
 `.is_unique` — это атрибут, который возвращает `True`, если все элементы уникальны.
 
