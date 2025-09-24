@@ -2,23 +2,23 @@
 
 ---
 
-### 2.11.1 Поэлементное сравнение
+### 2.11.1 [Поэлементное сравнение](https://numpy.org/doc/stable/reference/ufuncs.html#comparison-functions)
 
 Для поэлементного сравнения двух массивов можно использовать как функции NumPy, так и стандартные операторы. Операторы почти всегда предпочтительнее из-за лучшей читаемости.
 
 | Функция | Оператор | Описание |
 | :--- | :---: | :--- |
-| `np.greater(arr1, arr2)` | `arr1 > arr2` | Больше |
-| `np.greater_equal(arr1, arr2)`| `arr1 >= arr2`| Больше или равно |
-| `np.less(arr1, arr2)` | `arr1 < arr2` | Меньше |
-| `np.less_equal(arr1, arr2)` | `arr1 <= arr2` | Меньше или равно |
-| `np.equal(arr1, arr2)` | `arr1 == arr2` | Равно |
+| [`np.greater(arr1, arr2)`](https://numpy.org/doc/stable/reference/generated/numpy.greater.html) | `arr1 > arr2` | Больше |
+| [`np.greater_equal(arr1, arr2)`](https://numpy.org/doc/stable/reference/generated/numpy.greater_equal.html)| `arr1 >= arr2`| Больше или равно |
+| [`np.less(arr1, arr2)`](https://numpy.org/doc/stable/reference/generated/numpy.less.html) | `arr1 < arr2` | Меньше |
+| [`np.less_equal(arr1, arr2)`](https://numpy.org/doc/stable/reference/generated/numpy.less_equal.html) | `arr1 <= arr2` | Меньше или равно |
+| [`np.equal(arr1, arr2)`](https://numpy.org/doc/stable/reference/generated/numpy.equal.html) | `arr1 == arr2` | Равно |
 
 Результатом любой из этих операций является **булев массив (маска)**.
 
 ---
 
-### 2.11.3-2.11.5 Условная замена элементов: `np.where`
+### 2.11.3-2.11.5 Условная замена элементов: [`np.where`](https://numpy.org/doc/stable/reference/generated/numpy.where.html)
 
 Функция `np.where` — это мощный инструмент для поэлементной условной замены, аналог тернарного оператора.
 
@@ -42,17 +42,17 @@ result = np.where(arr > 0, arr ** 2, 0)
 
 ---
 
-### 2.11.6-2.11.8 Статистические и агрегирующие функции
+### 2.11.6-2.11.8 [Статистические](https://numpy.org/doc/stable/reference/routines.statistics.html) и [агрегирующие](https://numpy.org/doc/stable/reference/routines.math.html#sums-products-differences) функции
 
 Эти функции вычисляют одну сводную характеристику для всего массива или для его отдельных осей. Их можно вызывать как `np.function(arr)` или как метод `arr.function()`.
 
 **Основные функции:**
-*   `sum()`: Сумма всех элементов.
-*   `mean()`: Среднее арифметическое.
-*   `min()` / `max()`: Минимальное / максимальное значение.
-*   `argmin()` / `argmax()`: Индекс минимального / максимального элемента.
-*   `std()`: Стандартное отклонение (показывает разброс данных).
-*   `var()`: Дисперсия (квадрат стандартного отклонения).
+*   [`sum()`](https://numpy.org/doc/stable/reference/generated/numpy.sum.html): Сумма всех элементов.
+*   [`mean()`](https://numpy.org/doc/stable/reference/generated/numpy.mean.html): Среднее арифметическое.
+*   [`min()`](https://numpy.org/doc/stable/reference/generated/numpy.min.html) / [`max()`](https://numpy.org/doc/stable/reference/generated/numpy.max.html): Минимальное / максимальное значение.
+*   [`argmin()`](https://numpy.org/doc/stable/reference/generated/numpy.argmin.html) / [`argmax()`](https://numpy.org/doc/stable/reference/generated/numpy.argmax.html): Индекс минимального / максимального элемента.
+*   [`std()`](https://numpy.org/doc/stable/reference/generated/numpy.std.html): Стандартное отклонение (показывает разброс данных).
+*   [`var()`](https://numpy.org/doc/stable/reference/generated/numpy.var.html): Дисперсия (квадрат стандартного отклонения).
 
 **Параметр `axis` для многомерных массивов:**
 Этот параметр указывает, вдоль какой оси выполнять операцию.
@@ -64,7 +64,7 @@ result = np.where(arr > 0, arr ** 2, 0)
 
 ### 2.11.9 Суммирование булевых массивов
 
-При применении агрегирующих функций (например, `.sum()`) к булеву массиву, `True` интерпретируется как `1`, а `False` — как `0`.
+При применении агрегирующих функций (например, [`.sum()`](https://numpy.org/doc/stable/reference/generated/numpy.sum.html)) к булеву массиву, `True` интерпретируется как `1`, а `False` — как `0`.
 
 Это очень удобный способ **подсчитать количество элементов**, удовлетворяющих условию.
 
