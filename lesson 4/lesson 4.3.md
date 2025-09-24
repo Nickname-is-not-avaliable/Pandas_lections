@@ -3,9 +3,9 @@
 ---
 #### 4.3.1-4.3.3 Итеративная обработка больших файлов (`chunksize`)
 
-Для обработки файлов, которые не помещаются в оперативную память, `pd.read_csv` имеет параметр `chunksize`. Он позволяет читать файл не целиком, а последовательными "кусками" заданного размера.
+Для обработки файлов, которые не помещаются в оперативную память, [`pd.read_csv`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) имеет параметр `chunksize`. Он позволяет читать файл не целиком, а последовательными "кусками" заданного размера.
 
-При использовании `chunksize` функция возвращает не `DataFrame`, а специальный объект-итератор (`TextFileReader`), который нужно обрабатывать в цикле.
+При использовании `chunksize` функция возвращает не `DataFrame`, а специальный объект-итератор ([`TextFileReader`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.io.parsers.TextFileReader.html)), который нужно обрабатывать в цикле.
 
 **Пример: Подсчет частоты клиентов в большом файле**
 
@@ -67,9 +67,9 @@ msft      1.0
 dtype: float64
 ```
 ---
-#### 4.3.4-4.3.8 Сохранение `DataFrame` в CSV (`.to_csv()`)
+#### 4.3.4-4.3.8 Сохранение `DataFrame` в CSV ([`.to_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html))
 
-Метод `.to_csv()` позволяет записывать содержимое `DataFrame` в файл.
+Метод [`.to_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html) позволяет записывать содержимое `DataFrame` в файл.
 
 **--- Исходные данные для сохранения ---**
 ```python
@@ -91,7 +91,7 @@ day2       LA  30.0        45
 day3  Chicago   NaN        65
 ```
 ---
-**Примеры использования параметров `.to_csv()`**
+**Примеры использования параметров [`.to_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html)**
 
 **1. `sep` — изменение разделителя**
 ```python
