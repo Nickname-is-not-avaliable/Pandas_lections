@@ -1,7 +1,7 @@
-### 5.6 Работа со строками - проще чем кажется!
+### 5.6 [Работа со строками](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html) - проще чем кажется!
 
 ---
-#### 5.6.1-5.6.3 `.str` Accessor vs `.map()`
+#### 5.6.1-5.6.3 [`.str` Accessor](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.html) vs [`.map()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.map.html)
 
 Для выполнения векторизованных строковых операций над `Series` (т.е. применения операции к каждому элементу) используется специальный accessor `.str`.
 
@@ -72,7 +72,7 @@ Name: product_code, dtype: object
 ```
 
 ---
-#### 5.6.4-5.6.6 Основные строковые методы
+#### 5.6.4-5.6.6 [Основные строковые методы](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#string-methods)
 
 **--- Исходные данные те же ---**
 ```python
