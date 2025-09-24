@@ -2,13 +2,13 @@
 
 ---
 
-### 2.3.1 Типы данных (Data Types)
+### 2.3.1 Типы данных ([`dtype`](https://numpy.org/doc/stable/reference/arrays.dtypes.html)) и их преобразование ([`.astype()`](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.astype.html))
 
 Полезные ссылки:
 *   [JavaTPoint: NumPy Data Types](https://www.javatpoint.com/numpy-datatypes)
 *   [CoderLessons: NumPy Типы данных](https://coderlessons.com/tutorials/python-technologies/uchitsia-numpy/numpy-tipy-dannykh)
 
-**Задать тип данных вручную при создании массива:**
+**Задать тип данных вручную при создании массива [`np.array`](https://numpy.org/doc/stable/reference/generated/numpy.array.html):**
 ```python
 # np._type_ - нужный тип данных (например, np.int16, np.float64)
 arr = np.array([a, b, ..., z], dtype=np._type_)
@@ -19,7 +19,7 @@ arr = np.array([a, b, ..., z], dtype=np._type_)
 # Создается новый массив arr2 с измененным типом
 arr2 = arr1.astype(np._type_)
 ```
-**Важно:** Исходный массив `arr1` при этом не меняется. Метод `astype()` возвращает новый массив (копию).
+**Важно:** Исходный массив `arr1` при этом не меняется. Метод `.astype()` возвращает новый массив (копию).
 
 ---
 
@@ -28,7 +28,7 @@ arr2 = arr1.astype(np._type_)
 **2.3.5** Метод `astype()` вызовет ошибку, если данные невозможно привести к указанному типу (например, строку `'hello'` в `int`).
 
 **2.3.6** Можно использовать тип данных одного массива для преобразования другого:
-`arr1.astype(arr2.dtype)`
+`arr1.[astype](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.astype.html)(arr2.[dtype](https://numpy.org/doc/stable/reference/arrays.dtypes.html))`
 
 ---
 
@@ -52,7 +52,7 @@ arr2 = arr1.astype(np._type_)
 
 ---
 
-### 2.3.10 Обращение к элементам по индексам
+### 2.3.10 [Обращение к элементам по индексам](https://numpy.org/doc/stable/user/basics.indexing.html)
 
 Используется стандартный синтаксис Python:
 *   Для одного элемента: `arr[a]`
@@ -60,7 +60,7 @@ arr2 = arr1.astype(np._type_)
 
 ---
 
-### 2.3.11 Слайсинг (срезы) и представления (Views)
+### 2.3.11 [Слайсинг (срезы) и представления (Views)](https://numpy.org/doc/stable/user/basics.indexing.html#slicing-and-striding)
 
 **Важная особенность NumPy:** срез массива не создает копию, а является "представлением" (view) исходных данных.
 
@@ -68,4 +68,4 @@ arr2 = arr1.astype(np._type_)
 ```python
 arr1 = arr[a:n]
 ```
-...а затем меняете значения в `arr1`, то **изменения отразятся и в исходном массиве `arr`**. 
+...а затем меняете значения в `arr1`, то **изменения отразятся и в исходном массиве `arr`**.
