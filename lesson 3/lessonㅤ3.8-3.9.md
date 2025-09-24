@@ -1,10 +1,10 @@
-### 3.8 Функции `reindex`, `drop` и продвинутая индексация
+### 3.8 Функции [`reindex`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reindex.html), [`drop`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html) и продвинутая индексация
 
 ---
 
-#### 3.8.1-3.8.2 Неизменяемость объекта `Index`
+#### 3.8.1-3.8.2 Неизменяемость объекта [`Index`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.html)
 
-И строки, и столбцы `DataFrame` представлены объектом `pd.Index`. Ключевое свойство этого объекта — **неизменяемость**. Вы не можете изменить отдельный элемент индекса напрямую. Это защищает от случайных ошибок.
+И строки, и столбцы `DataFrame` представлены объектом [`pd.Index`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.html). Ключевое свойство этого объекта — **неизменяемость**. Вы не можете изменить отдельный элемент индекса напрямую. Это защищает от случайных ошибок.
 
 **Пример:**
 ```python
@@ -18,13 +18,13 @@ try:
 except TypeError as e:
     print(f"Ошибка: {e}")
 ```
-Для изменения меток нужно использовать специальные методы, такие как `.reindex()` или переприсваивать весь индекс целиком.
+Для изменения меток нужно использовать специальные методы, такие как [`.reindex()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reindex.html) или переприсваивать весь индекс целиком.
 
 ---
 
-#### 3.8.3 Изменение/переупорядочивание индексов: `reindex`
+#### 3.8.3 Изменение/переупорядочивание индексов: [`reindex`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reindex.html)
 
-Метод `.reindex()` создает **новый** `DataFrame`, приводя его к новому набору меток по указанной оси.
+Метод [`.reindex()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reindex.html) создает **новый** `DataFrame`, приводя его к новому набору меток по указанной оси.
 
 **Синтаксис по умолчанию:**
 `df.reindex(labels, axis=0)`
@@ -45,9 +45,9 @@ c   NaN    NaN  # <-- Новая строка, заполнена NaN
 ```
 ---
 
-#### 3.8.4-3.8.5 Удаление строк/столбцов: `drop`
+#### 3.8.4-3.8.5 Удаление строк/столбцов: [`drop`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html)
 
-Метод `.drop()` используется для удаления данных по меткам.
+Метод [`.drop()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html) используется для удаления данных по меткам.
 
 **Синтаксис по умолчанию:**
 `df.drop(labels, axis=0, inplace=False)`
@@ -69,7 +69,7 @@ df.drop('Texas', axis=1, inplace=True)
 ---
 
 
-#### 3.8.7-3.8.8 Индексация в `Series`
+#### 3.8.7-3.8.8 [Индексация в `Series`](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#basics)
 
 ```python
 s = pd.Series(np.arange(4.), index=['a', 'b', 'c', 'd'])
@@ -82,7 +82,7 @@ mask = s > 2
 print("\nBoolean mask:\n", s[mask])
 ```
 
-#### 3.8.9-3.8.10 Слайсинг по меткам в `Series`
+#### 3.8.9-3.8.10 [Слайсинг по меткам в `Series`](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#slicing-with-labels)
 
 Как по мне, крайне спорная фича Pandas.
 
@@ -104,9 +104,9 @@ print(s1['a':'b'])
 print(s1['a':'c'])
 # Вывод: Series([], dtype: int64)
 ```
-На практике, чтобы избежать такого поведения, **лучше сначала отсортировать индекс** с помощью `s1.sort_index()` или использовать `.loc` для явного выбора.
+На практике, чтобы избежать такого поведения, **лучше сначала отсортировать индекс** с помощью [`s1.sort_index()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.sort_index.html) или использовать [`.loc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.loc.html) для явного выбора.
 
-#### 3.8.11 Выбор данных в `DataFrame`
+#### 3.8.11 [Выбор данных в `DataFrame`](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#basics)
 
 Это основной способ фильтрации данных.
 
@@ -129,7 +129,7 @@ print("\nФильтрация (строки, где 'three' > 5):\n", df[mask])
 ```
 
 ---
-#### 3.8.12-3.8.13 Двумерные маски и агрегация
+#### 3.8.12-3.8.13 [Двумерные маски](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#boolean-indexing) и агрегация
 
 **Двумерная маска:**
 Можно применить булево условие ко всему `DataFrame`. Это создаст двумерную маску. При применении ее к `DataFrame` значения, где в маске `False`, заменятся на `NaN`.
