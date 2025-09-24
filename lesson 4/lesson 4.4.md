@@ -1,4 +1,4 @@
-### 4.4 Кто такой JSON и как с ним подружиться?
+### 4.4 Кто такой [JSON](https://ecma-international.org/publications-and-standards/standards/ecma-404/) и как с ним подружиться?
 
 ---
 #### 4.4.1-4.4.3 Что такое JSON?
@@ -32,7 +32,7 @@
 ---
 #### 4.4.4-4.4.6 Чтение и запись JSON с помощью Pandas
 
-**1. `pd.read_json()` — чтение файла**
+**1. [`pd.read_json()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_json.html) — чтение файла**
 ```python
 # --- Чтение файла data.json ---
 df_from_json = pd.read_json('data.json')
@@ -49,7 +49,7 @@ DataFrame, прочитанный из data.json:
 2   3  Charlie      Chicago
 ```
 
-**2. `df.to_json()` — запись в файл и параметр `orient`**
+**2. [`df.to_json()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_json.html) — запись в файл и параметр `orient`**
 Метод `.to_json()` сохраняет `DataFrame`. Параметр `orient` контролирует структуру выходного JSON.
 
 **--- Исходные данные для сохранения ---**
@@ -78,7 +78,7 @@ df_to_save.to_json('output_records.json', orient='records')
 # (Список словарей, идеально для API)
 ```
 ---
-#### 4.4.8-4.4.9 Работа с JSON из веб-источников (`requests`)
+#### 4.4.8-4.4.9 Работа с JSON из веб-источников ([`requests`](https://requests.readthedocs.io/en/latest/))
 
 Часто данные в формате JSON получают по URL с помощью HTTP-запроса. Для этого используется библиотека `requests`.
 
