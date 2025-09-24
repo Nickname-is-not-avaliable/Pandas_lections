@@ -1,9 +1,9 @@
-### 5.2 Проверяем данные на дубликаты и избавляемся от них
+### 5.2 [Заполнение пропусков](https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#filling-missing-values), [дубликаты](https://pandas.pydata.org/pandas-docs/stable/user_guide/duplicates.html) и [замена значений](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#string-methods)
 
 ---
-#### 5.2.1-5.2.4 Заполнение пропущенных значений (`.fillna()`)
+#### 5.2.1-5.2.4 Заполнение пропущенных значений ([`.fillna()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html))
 
-Метод `.fillna()` заменяет пропущенные значения (`NaN`) на указанные. По умолчанию возвращает новый `DataFrame`.
+Метод [`.fillna()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html) заменяет пропущенные значения (`NaN`) на указанные. По умолчанию возвращает новый `DataFrame`.
 
 **--- Исходные данные ---**
 ```python
@@ -140,7 +140,7 @@ DataFrame с дубликатами:
 4    two   1  Y
 ```
 ---
-**1. `df.duplicated()` — поиск дубликатов**
+**1. [`df.duplicated()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.duplicated.html) — поиск дубликатов**
 Возвращает булеву `Series`, где `True` означает, что строка является дубликатом (т.е., она встречалась ранее).
 
 ```python
@@ -158,7 +158,7 @@ print(df_duplicates.duplicated())
 dtype: bool
 ```
 ---
-**2. `df.drop_duplicates()` — удаление дубликатов**
+**2. [`df.drop_duplicates()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop_duplicates.html) — удаление дубликатов**
 
 *   По умолчанию удаляет все строки, для которых `duplicated()` вернуло `True`, оставляя только первое вхождение.
 *   `subset`: Список столбцов, по которым искать дубликаты.
@@ -203,11 +203,11 @@ print(df_duplicates.drop_duplicates(keep=False))
 3  three   2  X
 ```
 ---
-#### 5.2.8-5.2.10 Применение функций: `.map()`, `.apply()`, `.applymap()`
+#### 5.2.8-5.2.10 Применение функций: [`Series.map()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.map.html)
 
-Для применения функций к данным в Pandas используются методы `.map()`, `.apply()`, `.applymap()`.
+Для применения функций к данным в Pandas используются методы [`Series.map()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.map.html), [`DataFrame.apply()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html), [`DataFrame.applymap()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.applymap.html).
 
-**1. `Series.map()` — для замены значений в Series**
+**1. [`Series.map()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.map.html) — для замены значений в Series**
 Используется для замены каждого значения в `Series` на другое, согласно словарю или функции.
 
 **--- Исходные данные ---**
