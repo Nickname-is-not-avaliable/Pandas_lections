@@ -1,8 +1,8 @@
-### 2.14 Функции permutation и shuffle. Сохранение массива в файл
+### 2.14 Функции [permutation](https://numpy.org/doc/stable/reference/random/generated/numpy.random.permutation.html) и [shuffle](https://numpy.org/doc/stable/reference/random/generated/numpy.random.shuffle.html). Сохранение массива в файл
 
 ---
 
-### 2.14.1-2.14.2 Перемешивание элементов
+### 2.14.1-2.14.2 Перемешивание элементов ([`np.random.permutation`](https://numpy.org/doc/stable/reference/random/generated/numpy.random.permutation.html), [`np.random.shuffle`](https://numpy.org/doc/stable/reference/random/generated/numpy.random.shuffle.html))
 
 NumPy предоставляет два основных способа для случайного перемешивания данных:
 
@@ -23,7 +23,7 @@ NumPy предоставляет два основных способа для �
 
 ---
 
-### 2.14.3-2.14.4 Генерация данных из нормального распределения
+### 2.14.3-2.14.4 Генерация данных из нормального распределения ([`np.random.randn`](https://numpy.org/doc/stable/reference/random/generated/numpy.random.randn.html))
 
 *   **`np.random.randn(d1, d2, ...)`:**
     Создает массив указанной формы, заполненный случайными числами типа `float` из **стандартного нормального ("гауссова") распределения**.
@@ -44,7 +44,7 @@ arr_2d = np.random.randn(2, 3)
 
 ---
 
-### 2.14.5 Сохранение и загрузка одного массива (`.npy`)
+### 2.14.5 Сохранение и загрузка одного массива `.npy` ([`np.save`](https://numpy.org/doc/stable/reference/generated/numpy.save.html), [`np.load`](https://numpy.org/doc/stable/reference/generated/numpy.load.html))
 
 *   **`np.save(filename, arr)`:**
     Сохраняет один массив `arr` в двоичный файл. Если не указать расширение, по умолчанию будет добавлено `.npy`.
@@ -54,7 +54,7 @@ arr_2d = np.random.randn(2, 3)
 
 ---
 
-### 2.14.6-2.14.7 Сохранение и загрузка нескольких массивов (`.npz`)
+### 2.14.6-2.14.7 Сохранение и загрузка нескольких массивов `.npz` ([`np.savez`](https://numpy.org/doc/stable/reference/generated/numpy.savez.html), [`np.savez_compressed`](https://numpy.org/doc/stable/reference/generated/numpy.savez_compressed.html))
 
 Для сохранения нескольких массивов в один файл используются функции, создающие архивы `.npz`.
 
