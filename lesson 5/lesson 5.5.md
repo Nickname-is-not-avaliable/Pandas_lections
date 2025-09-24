@@ -94,34 +94,56 @@ print(df_genres)
 2         3   Action|Thriller
 ```
 ---
-**--- Ручное создание, присоединение и очистка ---**
-Здесь нет встроенной функции, поэтому мы делаем это в несколько шагов.
+**Способ 1: Использование [`Series.str.get_dummies`](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.get_dummies.html#pandas.Series.str.get_dummies) (Рекомендуемый)**
 
-**Объяснение ключевых функций:**
-*   **`.columns.get_indexer(labels)`**: Эта функция принимает список меток (`labels`) и возвращает список **числовых позиций (индексов)** этих меток в `df.columns`. Например, если `df.columns` это `['A', 'B', 'C']`, то `df.columns.get_indexer(['C', 'A'])` вернет `[2, 0]`. Это очень удобно для использования с `.iloc`, так как позволяет быстро найти нужные столбцы по их именам.
-*   **`.add_prefix(prefix_str)`**: Этот метод просто добавляет строку `prefix_str` в начало **каждого имени столбца** в `DataFrame`. Например, `['Action', 'Comedy']` станет `['Genre_Action', 'Genre_Comedy']`.
+Для решения этой задачи в Pandas существует специальный, очень удобный и быстрый метод: `.str.get_dummies()`. Он автоматически разделяет строку по указанному символу и создает фиктивную матрицу. Этот способ является предпочтительным.
 
 ```python
-# 1. Получаем все уникальные жанры и создаем пустую матрицу из нулей
-all_genres = set(g for s in df_genres['genres'] for g in s.split('|'))
-genre_dummies = pd.DataFrame(0, index=df_genres.index, columns=sorted(list(all_genres)))
+# 1. Создаем фиктивную матрицу, указав '|' в качестве разделителя
+genre_dummies = df_genres['genres'].str.get_dummies(sep='|')
 
-# 2. Заполняем матрицу
-for i, genres_str in enumerate(df_genres['genres']):
-    # Находим числовые позиции столбцов, соответствующих жанрам в текущей строке
-    col_indices = genre_dummies.columns.get_indexer(genres_str.split('|'))
-    # По этим позициям вставляем 1
-    genre_dummies.iloc[i, col_indices] = 1
-
-# 3. Добавляем префикс и присоединяем к исходным данным, удаляя старый столбец
+# 2. Добавляем префикс и присоединяем к исходным данным
 df_final = df_genres.join(genre_dummies.add_prefix('Genre_')).drop('genres', axis=1)
 
-print("\nФинальный DataFrame с фиктивными переменными для жанров:")
+print("\nФинальный DataFrame (способ .str.get_dummies):")
 print(df_final)
 ```
 **Вывод:**
 ```
-Финальный DataFrame с фиктивными переменными для жанров:
+Финальный DataFrame (способ .str.get_dummies):
+   movie_id  Genre_Action  Genre_Adventure  Genre_Comedy  Genre_Thriller
+0         1             1                1             0               0
+1         2             0                0             1               0
+2         3             1                0             0               1
+```
+---
+**Способ 2: Ручной парсинг (для понимания)**
+
+Хотя использование `.str.get_dummies()` является лучшей практикой, понимание ручного процесса может быть полезным. Этот метод включает создание пустой матрицы и ее заполнение в цикле.
+
+**Объяснение ключевых функций:**
+*   **`.columns.get_indexer(labels)`**: Эта функция принимает список меток (`labels`) и возвращает список **числовых позиций (индексов)** этих меток в `df.columns`. Например, если `df.columns` это `['A', 'B', 'C']`, то `df.columns.get_indexer(['C', 'A'])` вернет `[2, 0]`.
+*   **`.add_prefix(prefix_str)`**: Этот метод просто добавляет строку `prefix_str` в начало **каждого имени столбца** в `DataFrame`.
+
+```python
+# 1. Получаем все уникальные жанры и создаем пустую матрицу из нулей
+all_genres = set(g for s in df_genres['genres'] for g in s.split('|'))
+genre_dummies_manual = pd.DataFrame(0, index=df_genres.index, columns=sorted(list(all_genres)))
+
+# 2. Заполняем матрицу
+for i, genres_str in enumerate(df_genres['genres']):
+    col_indices = genre_dummies_manual.columns.get_indexer(genres_str.split('|'))
+    genre_dummies_manual.iloc[i, col_indices] = 1
+
+# 3. Добавляем префикс и присоединяем
+df_final_manual = df_genres.join(genre_dummies_manual.add_prefix('Genre_')).drop('genres', axis=1)
+
+print("\nФинальный DataFrame (ручной способ):")
+print(df_final_manual)
+```
+**Вывод:** (Результат идентичен)
+```
+Финальный DataFrame (ручной способ):
    movie_id  Genre_Action  Genre_Adventure  Genre_Comedy  Genre_Thriller
 0         1             1                1             0               0
 1         2             0                0             1               0
