@@ -1,6 +1,4 @@
-
-
-### 3.10 Точный выбор данных: `loc`, `iloc`, `at`, `iat`
+### 3.10 Точный выбор данных: [`loc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html), [`iloc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html), [`at`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.at.html), [`iat`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iat.html)
 
 ---
 
@@ -29,7 +27,7 @@ d    12     13    14      15
 ```
 ---
 
-#### 3.10.1-3.10.4 Оператор `loc`: выбор по меткам
+#### 3.10.1-3.10.4 Оператор [`loc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html): выбор по меткам
 
 `loc` выбирает данные по **названиям** строк и столбцов.
 
@@ -80,7 +78,7 @@ c     8      9
 d    12     13
 ```
 ---
-#### 3.10.5 Оператор `iloc`: выбор по номерам
+#### 3.10.5 Оператор [`iloc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html): выбор по номерам
 
 `iloc` работает аналогично `loc`, но использует **порядковые номера** (позиции) строк и столбцов, начиная с `0`.
 
@@ -111,7 +109,7 @@ a      1       3
 c      9      11
 ```
 ---
-#### 3.10.6-3.10.7 `at`, `iat` и перезапись данных
+#### 3.10.6-3.10.7 [`at`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.at.html), [`iat`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iat.html) и перезапись данных
 
 `at` и `iat` — это сверхбыстрые версии `loc` и `iloc` для доступа к **одной ячейке**. Их также можно использовать для присваивания.
 
@@ -145,7 +143,7 @@ c     8      9    10      11
 d    12     13    14      15
 ```
 ---
-#### 3.10.8-3.10.10 Сложение `DataFrame` и выравнивание
+#### 3.10.8-3.10.10 [Сложение `DataFrame` и выравнивание](https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html#arithmetic-and-data-alignment)
 
 При сложении двух `DataFrame` Pandas автоматически **выравнивает их по меткам строк и столбцов**.
 
@@ -190,6 +188,6 @@ c   NaN NaN NaN
 d   NaN NaN NaN
 ```
 *   **Ячейка `[a, A]`:** `0.0` (потому что `0` из `df1` + `0` из `df2`). Это единственная ячейка, где **и индекс, и столбец** совпали.
-*   **Ячейка `[a, B]`:** `NaN`, потому что столбец `B` есть в `df1`, но его нет в `df2`.
+*   **Ячейка `[a, B]`:** `NaN` ([`np.nan`](https://numpy.org/doc/stable/reference/constants.html#numpy.nan)), потому что столбец `B` есть в `df1`, но его нет в `df2`.
 *   **Ячейка `[b, A]`:** `NaN`, потому что индекс `b` есть в `df1`, но его нет в `df2`.
 *   **Все остальные:** `NaN`, так как для них не нашлось пары с совпадающими метками строки и столбца.
