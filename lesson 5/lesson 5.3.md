@@ -1,9 +1,9 @@
-### 5.3 Про замену значений и дискретизацию
+### 5.3 Про [замену значений](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html) и [дискретизацию](https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#grouping-and-discretization)
 
 ---
-#### 5.3.1 Замена значений: `.replace()`
+#### 5.3.1 Замена значений: [`.replace()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html)
 
-Метод `.replace()` ищет указанные значения и заменяет их на новые.
+Метод [`.replace()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html) ищет указанные значения и заменяет их на новые.
 
 **--- Исходные данные ---**
 ```python
@@ -53,9 +53,9 @@ print(df_replaced_dict)
 ```
 
 ---
-#### 5.3.2-5.3.3 Переименование индексов и столбцов (`.map()` и `.rename()`)
+#### 5.3.2-5.3.3 Переименование индексов и столбцов ([`.map()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.map.html) и [`.rename()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html))
 
-**1. Использование `.map()` для полного переименования**
+**1. Использование [`.map()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.map.html) для полного переименования**
 Метод `.map()` можно применить к объекту `Index` (строкам или столбцам) для замены всех меток.
 
 **--- Исходные данные ---**
@@ -99,7 +99,7 @@ row_B  3  4  5
 row_C  6  7  8
 ```
 ---
-**2. Использование `.rename()` для частичного переименования**
+**2. Использование [`.rename()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html) для частичного переименования**
 `.rename()` удобнее, когда нужно изменить только некоторые метки.
 
 **--- Исходные данные те же ---**
@@ -127,9 +127,9 @@ b         3           4     5
 c         6           7     8
 ```
 ---
-#### 5.3.4-5.3.8 Дискретизация и группировка (`.cut()` и `.qcut()`)
+#### 5.3.4-5.3.8 Дискретизация и группировка ([`.cut()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.cut.html) и [`.qcut()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.qcut.html))
 
-**1. `pd.cut()` — разбивка по заданным интервалам**
+**1. [`pd.cut()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.cut.html) — разбивка по заданным интервалам**
 `cut` делит данные на группы (бины) на основе заданных границ.
 *   `right=True` (по умолчанию): Правая граница интервала включается `(a, b]`.
 *   `right=False`: Левая граница интервала включается `[a, b)`.
@@ -203,7 +203,7 @@ Categories (4, object): ['Child' < 'Young Adult' < 'Adult' < 'Senior']
 dtype: int64
 ```
 ---
-**2. `pd.qcut()` — разбивка по квантилям (равное количество)**
+**2. [`pd.qcut()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.qcut.html) — разбивка по квантилям (равное количество)**
 `qcut` делит данные так, чтобы в каждой группе оказалось примерно **одинаковое количество элементов**.
 
 **--- Исходные данные ---**
