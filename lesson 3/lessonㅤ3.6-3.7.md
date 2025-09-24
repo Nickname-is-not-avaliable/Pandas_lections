@@ -1,5 +1,4 @@
-
-### 3.6 Поподробнее про `DataFrame`: индексы, вложенные словари, `del` и `.T`
+### 3.6 Поподробнее про [`DataFrame`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html): индексы, вложенные словари, [`del`](https://docs.python.org/3/reference/simple_stmts.html#the-del-statement) и [`.T`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.T.html)
 
 ---
 
@@ -57,7 +56,7 @@ c    NaN  # <-- Индекс 'c' не было в update_dict
 
 #### 3.6.4 Удаление столбцов
 
-Для удаления столбца используется оператор `del`. Он изменяет `DataFrame` на месте.
+Для удаления столбца используется оператор [`del`](https://docs.python.org/3/reference/simple_stmts.html#the-del-statement). Он изменяет `DataFrame` на месте.
 
 ```python
 del df['new_col_ok']
@@ -67,7 +66,7 @@ del df['new_col_ok']
 
 #### 3.6.6, 3.6.8 Транспонирование и доступ к данным
 
-*   **Транспонирование (`.T`):**
+*   **Транспонирование ([`.T`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.T.html)):**
     Атрибут `.T` меняет местами строки и столбцы. Это создает **новое представление** данных, не изменяя исходный `DataFrame`.
     ```python
     print(df_nested.T)
@@ -78,7 +77,7 @@ del df['new_col_ok']
     Ohioㅤ     1.5  ㅤ 1.7   3.6
     Nevada   NaN   2.4   2.9
     ```
-*   **Доступ к "сырым" данным (`.values`):**
+*   **Доступ к "сырым" данным ([`.values`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.values.html)):**
     Атрибут `.values` возвращает данные `DataFrame` в виде **двумерного массива NumPy**, без индексов и названий столбцов.
     ```python
     print(df_nested.values)
@@ -87,9 +86,9 @@ del df['new_col_ok']
 
 ---
 
-#### 3.6.9-3.6.10 Объект `Index`
+#### 3.6.9-3.6.10 Объект [`Index`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.html)
 
-Индексные метки (и для строк, и для столбцов) хранятся в специальном объекте `pd.Index`.
+Индексные метки (и для строк, и для столбцов) хранятся в специальном объекте [`pd.Index`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.html).
 
 **Ключевые свойства:**
 1.  **Неизменяемость (Immutable):** Вы не можете изменить отдельный элемент индекса. Это обеспечивает безопасность данных и предсказуемость операций.
