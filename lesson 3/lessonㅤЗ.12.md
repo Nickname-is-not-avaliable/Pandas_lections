@@ -2,9 +2,9 @@
 
 ---
 
-#### 3.12.1-3.12.2 Агрегирующие функции: `sum`, `mean` и параметры
+#### 3.12.1-3.12.2 Агрегирующие функции: [`sum`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sum.html), [`mean`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mean.html) и параметры
 
-Функции, такие как `.sum()` и `.mean()`, имеют важные параметры:
+Функции, такие как [`.sum()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sum.html) и [`.mean()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mean.html), имеют важные параметры:
 *   `axis`: Ось для вычислений (`0` для столбцов, `1` для строк).
 *   `skipna` (по умолчанию `True`): Игнорировать ли `NaN` при расчетах. Если `False`, то при наличии `NaN` результат будет `NaN`.
 
@@ -54,9 +54,9 @@ d   -0.55
 dtype: float64
 ```
 ---
-#### 3.12.3-3.12.5 Сводная статистика: `.describe()`
+#### 3.12.3-3.12.5 Сводная статистика [`describe()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html):
 
-Метод `.describe()` генерирует сводную статистику для числовых столбцов (или `Series`).
+Метод [`.describe()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html) генерирует сводную статистику для числовых столбцов (или `Series`).
 
 **--- Исходные данные ---**
 ```python
@@ -72,7 +72,7 @@ b   7.10  -4.5
 c    NaN   NaN
 d   0.75  -1.3
 ```
-**--- Применение `.describe()` ---**
+**--- Применение [`.describe()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html) ---**
 ```python
 # 1. Для DataFrame (по столбцам)
 df_description = df_stats.describe()
@@ -109,10 +109,10 @@ max      7.100000
 Name: one, dtype: float64
 ```
 ---
-#### 3.12.6-3.12.8 Уникальные значения: `value_counts` и `isin`
+#### 3.12.6-3.12.8 Уникальные значения: [`value_counts`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.value_counts.html) и [`isin`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.isin.html)
 
-*   `.value_counts()`: Считает, сколько раз встречается каждое уникальное значение в `Series`.
-*   `.isin()`: Проверяет, какие элементы `Series` содержатся в переданной последовательности, и возвращает булеву маску.
+*   [`.value_counts()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.value_counts.html): Считает, сколько раз встречается каждое уникальное значение в `Series`.
+*   [`.isin()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.isin.html): Проверяет, какие элементы `Series` содержатся в переданной последовательности, и возвращает булеву маску.
 
 **--- Исходные данные ---**
 ```python
