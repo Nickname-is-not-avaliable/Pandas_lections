@@ -1,9 +1,9 @@
-### 5.5 Создаём матрицы фиктивных переменных (One-Hot Encoding)
+### 5.5 Создаём матрицы фиктивных переменных
 
 ---
 #### 5.5.1-5.5.2 Что такое фиктивные переменные?
 
-**Фиктивные переменные (или One-Hot Encoding)** — это техника преобразования категориальных данных (текстовых меток) в числовой формат, понятный для моделей машинного обучения.
+**Фиктивные переменные (или [One-Hot Encoding](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html))** — это техника преобразования категориальных данных (текстовых меток) в числовой формат, понятный для моделей машинного обучения.
 
 **Принцип:**
 1.  Берется столбец с категориальными данными (например, "Город").
@@ -30,7 +30,7 @@
 2        0        1  (Это NY? Да. Это LA? Нет.)
 ```
 ---
-#### 5.5.3-5.5.4 Создание фиктивных переменных с `pd.get_dummies`
+#### 5.5.3-5.5.4 Создание фиктивных переменных с [`pd.get_dummies`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html)
 
 **--- Исходные данные ---**
 ```python
@@ -50,7 +50,7 @@ print(df_city)
 2  103   NY
 ```
 
-**--- Полный цикл: `get_dummies`, `join`, `drop` ---**
+**--- Полный цикл: [`get_dummies`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html), [`join`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.join.html), [`drop`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html) ---**
 ```python
 # 1. Создаем фиктивную матрицу, добавляя к новым столбцам префикс 'City'
 dummies = pd.get_dummies(df_city['city'], prefix='City')
@@ -94,9 +94,9 @@ print(df_genres)
 2         3   Action|Thriller
 ```
 ---
-**Способ 1: Использование [`Series.str.get_dummies`](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.get_dummies.html#pandas.Series.str.get_dummies) (Рекомендуемый)**
+**Способ 1: Использование [`Series.str.get_dummies`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.get_dummies.html) (Рекомендуемый)**
 
-Для решения этой задачи в Pandas существует специальный, очень удобный и быстрый метод: `.str.get_dummies()`. Он автоматически разделяет строку по указанному символу и создает фиктивную матрицу. Этот способ является предпочтительным.
+Для решения этой задачи в Pandas существует специальный, очень удобный и быстрый метод: [`.str.get_dummies()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.get_dummies.html). Он автоматически разделяет строку по указанному символу и создает фиктивную матрицу. Этот способ является предпочтительным.
 
 ```python
 # 1. Создаем фиктивную матрицу, указав '|' в качестве разделителя
@@ -122,8 +122,8 @@ print(df_final)
 Хотя использование `.str.get_dummies()` является лучшей практикой, понимание ручного процесса может быть полезным. Этот метод включает создание пустой матрицы и ее заполнение в цикле.
 
 **Объяснение ключевых функций:**
-*   **`.columns.get_indexer(labels)`**: Эта функция принимает список меток (`labels`) и возвращает список **числовых позиций (индексов)** этих меток в `df.columns`. Например, если `df.columns` это `['A', 'B', 'C']`, то `df.columns.get_indexer(['C', 'A'])` вернет `[2, 0]`.
-*   **`.add_prefix(prefix_str)`**: Этот метод просто добавляет строку `prefix_str` в начало **каждого имени столбца** в `DataFrame`.
+*   **[`.columns.get_indexer(labels)`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.get_indexer.html)**: Эта функция принимает список меток (`labels`) и возвращает список **числовых позиций (индексов)** этих меток в `df.columns`. Например, если `df.columns` это `['A', 'B', 'C']`, то `df.columns.get_indexer(['C', 'A'])` вернет `[2, 0]`.
+*   **[`.add_prefix(prefix_str)`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.add_prefix.html)**: Этот метод просто добавляет строку `prefix_str` в начало **каждого имени столбца** в `DataFrame`.
 
 ```python
 # 1. Получаем все уникальные жанры и создаем пустую матрицу из нулей
@@ -150,7 +150,7 @@ print(df_final_manual)
 2         3             1                0             0               1
 ```
 ---
-#### 5.5.8 Использование `get_dummies` с `cut`
+#### 5.5.8 Использование [`get_dummies`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html) с [`cut`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.cut.html)
 
 Это очень распространенный прием для преобразования непрерывных числовых данных (например, возраст) в категориальные фиктивные переменные.
 
