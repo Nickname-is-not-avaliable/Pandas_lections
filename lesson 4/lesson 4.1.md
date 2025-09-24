@@ -2,7 +2,7 @@
 
 ---
 
-#### 4.1.1-4.1.5 Загрузка данных: от ручного парсинга до `pd.read_csv`
+#### 4.1.1-4.1.5 Загрузка данных: от ручного парсинга до [`pd.read_csv`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html)
 
 **Что такое CSV?**
 CSV (Comma-Separated Values) — это текстовый формат для хранения табличных данных, где столбцы разделены запятыми, а строки — переносами.
@@ -28,7 +28,7 @@ f.close()
 df_manual = pd.DataFrame(matrix[1:], columns=matrix[0])
 ```
 
-**2. Правильный способ: `pd.read_csv()`**
+**2. Правильный способ: [`pd.read_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html)**
 Pandas предоставляет оптимизированную функцию `pd.read_csv()` для чтения CSV-файлов, которая делает всё за вас.
 
 **Синтаксис:**
@@ -55,7 +55,7 @@ print(df)
 1  4  5  6
 ```
 ---
-#### 4.1.6-4.1.10 Основные параметры `pd.read_csv`
+#### 4.1.6-4.1.10 Основные параметры [`pd.read_csv`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html)
 
 **1. `sep` — указание разделителя**
 Используется, если данные разделены не запятой, а другим символом (например, `;`, `\t` (табуляция), `|`).
