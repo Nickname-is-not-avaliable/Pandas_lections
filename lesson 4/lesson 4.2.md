@@ -1,9 +1,9 @@
 ### 4.2 Поподробнее про обработку пропусков
 
 ---
-#### 4.2.1 Мультииндекс при чтении файла
+#### 4.2.1 [Мультииндекс](https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html#multiindex-advanced-indexing) при чтении файла
 
-Параметр `index_col` может принимать список столбцов, создавая иерархический индекс (`MultiIndex`).
+Параметр `index_col` может принимать список столбцов, создавая иерархический индекс ([`MultiIndex`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.MultiIndex.html)).
 
 **--- Исходные данные (`data_multi_index.csv`) ---**
 ```csv
@@ -161,7 +161,7 @@ DataFrame, содержащий только первые 2 строки:
 
 Вместо `nrows`, который просто обрезает файл, `chunksize` позволяет обрабатывать огромные файлы, которые не помещаются в память, по частям (чанками).
 
-`read_csv` с этим параметром возвращает не `DataFrame`, а итератор `TextFileReader`.
+[`read_csv`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) с этим параметром возвращает не `DataFrame`, а итератор [`TextFileReader`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.io.parsers.TextFileReader.html).
 
 **--- Исходные данные (`data_large.csv`) ---**
 ```
